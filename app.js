@@ -239,7 +239,9 @@ function submitQuiz() {
         let isCorrect = false;
         
         if (q.type === 'mcq' || q.type === 'truefalse') {
-            isCorrect = userAns == q.answer;
+            // 用戶選擇的選項文字 vs 正確答案文字
+            const selectedOption = q.options[userAns];
+            isCorrect = selectedOption === q.answer;
             if (isCorrect) correct++;
         } else if (q.type === 'fillblank') {
             isCorrect = userAns?.toLowerCase().trim() === q.answer.toLowerCase().trim();
@@ -263,19 +265,26 @@ function submitQuiz() {
             statusClass = 'review';
         }
         
+        // 取得用戶答案的文字
+        let userAnswerText = '';
+        let correctAnswerText = '';
+        
+        if (q.type === 'mcq' || q.type === 'truefalse') {
+            userAnswerText = q.options[userAns] || '未答';
+            correctAnswerText = q.options[q.answer] || q.answer;
+        } else {
+            userAnswerText = userAns || '未答';
+            correctAnswerText = q.answer;
+        }
+        
         resultsHTML += `
             <div class="review-item ${statusClass}">
                 <div class="review-header">
                     <span>${statusIcon} 第 ${i + 1} 題</span>
                 </div>
                 <p class="review-question">${q.question}</p>
-                ${q.type === 'mcq' || q.type === 'truefalse' ? `
-                    <p>你的答案：${q.options[userAns] || '未答'}</p>
-                    <p>正確答案：${q.answer}</p>
-                ` : `
-                    <p>你的答案：${userAns || '未答'}</p>
-                    ${q.type === 'fillblank' ? `<p>參考答案：${q.answer}</p>` : ''}
-                `}
+                <p>你的答案：${userAnswerText}</p>
+                <p>正確答案：${correctAnswerText}</p>
                 <p class="explanation">💡 ${q.explanation}</p>
                 ${q.type === 'shortanswer' && q.sampleAnswer ? `
                     <p class="sample-answer">📋 參考答案：${q.sampleAnswer}</p>
