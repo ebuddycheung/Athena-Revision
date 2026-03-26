@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Athena-Revision 🏛️</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <h1>🏛️ Athena-Revision</h1>
+            <p class="subtitle">AI-Powered Study Tool for Athena</p>
+        </header>
+
+        <!-- Subject Selection -->
+        <section id="subject-section" class="section active">
+            <h2>📚 Choose Your Subject</h2>
+            <div class="subject-grid">
+                <button class="subject-btn" data-subject="science">
+                    🔬 Science
+                </button>
+                <button class="subject-btn" data-subject="math">
+                    📐 Math
+                </button>
+                <button class="subject-btn" data-subject="english">
+                    📖 English
+                </button>
+                <button class="subject-btn" data-subject="history">
+                    🏰 History
+                </button>
+                <button class="subject-btn" data-subject="geography">
+                    🌍 Geography
+                </button>
+                <button class="subject-btn" data-subject="other">
+                    📋 Other
+                </button>
+            </div>
+        </section>
+
+        <!-- Chapter Selection -->
+        <section id="chapter-section" class="section">
+            <h2 id="subject-title">📑 Select Chapter</h2>
+            <button class="back-btn">← Back</button>
+            <div id="chapter-list" class="chapter-list">
+                <!-- Dynamically populated -->
+            </div>
+        </section>
+
+        <!-- Quiz Type Selection -->
+        <section id="quiz-section" class="section">
+            <h2>🎯 Choose Quiz Type</h2>
+            <button class="back-btn">← Back</button>
+            <div class="quiz-type-grid">
+                <button class="quiz-btn" data-type="mcq">
+                    <span class="icon">✅</span>
+                    Multiple Choice
+                </button>
+                <button class="quiz-btn" data-type="truefalse">
+                    <span class="icon">⬜</span>
+                    True or False
+                </button>
+                <button class="quiz-btn" data-type="fillblank">
+                    <span class="icon">✏️</span>
+                    Fill in the Blank
+                </button>
+                <button class="quiz-btn" data-type="shortanswer">
+                    <span class="icon">📝</span>
+                    Short Answer
+                </button>
+                <button class="quiz-btn" data-type="essay">
+                    <span class="icon">📃</span>
+                    Essay
+                </button>
+            </div>
+        </section>
+
+        <!-- Quiz Taking -->
+        <section id="quiz-taking-section" class="section">
+            <div class="quiz-header">
+                <h2>📝 Quiz Time!</h2>
+                <span id="progress">Question 1/10</span>
+            </div>
+            <button class="back-btn">← Exit Quiz</button>
+            
+            <div id="question-container" class="question-container">
+                <!-- Question displayed here -->
+            </div>
+
+            <div id="quiz-navigation" class="quiz-navigation">
+                <button id="prev-btn" class="nav-btn" disabled>← Previous</button>
+                <button id="next-btn" class="nav-btn">Next →</button>
+                <button id="submit-btn" class="submit-btn" style="display:none;">Submit Quiz</button>
+            </div>
+        </section>
+
+        <!-- Results Section -->
+        <section id="results-section" class="section">
+            <h2>🎉 Quiz Complete!</h2>
+            <div id="score-display" class="score-display">
+                <span id="score">0</span>/<span id="total">10</span>
+            </div>
+            <p id="score-message"></p>
+            <div id="review-section" class="review-section">
+                <!-- Review answers -->
+            </div>
+            <button class="action-btn" onclick="restartQuiz()">Try Again</button>
+            <button class="action-btn secondary" onclick="goHome()">Choose Another Quiz</button>
+        </section>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
