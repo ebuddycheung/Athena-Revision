@@ -1,0 +1,74 @@
+{
+  "subject": "chinese",
+  "chapter": "p5_unit1_poetry",
+  "title": "第一課：詠柳（古詩）",
+  "questions": [
+    {
+      "id": "ch_p5_1_001",
+      "type": "mcq",
+      "difficulty": "easy",
+      "question": "《詠柳》的作者是誰？",
+      "options": ["李白", "賀知章", "杜甫", "王維"],
+      "answer": "賀知章",
+      "explanation": "《詠柳》的作者是唐代詩人賀知章。"
+    },
+    {
+      "id": "ch_p5_1_002",
+      "type": "mcq",
+      "difficulty": "medium",
+      "question": "「二月春風似剪刀」用了什麼修辭手法？",
+      "options": ["比喻", "擬人", "排比", "對偶"],
+      "answer": "比喻",
+      "explanation": "這句詩把春風比作剪刀，是比喻修辭。"
+    },
+    {
+      "id": "ch_p5_1_003",
+      "type": "mcq",
+      "difficulty": "medium",
+      "question": "「萬條垂下綠絲絛」中的「絲絛」比喻的是什麼？",
+      "options": ["柳葉", "柳枝", "絲帶", "春風"],
+      "answer": "柳枝",
+      "explanation": "「絲絛」指用絲編成的帶子，比喻下垂的柳枝。"
+    },
+    {
+      "id": "ch_p5_1_004",
+      "type": "truefalse",
+      "difficulty": "easy",
+      "question": "《詠柳》是一首描寫夏天的詩。",
+      "answer": false,
+      "explanation": "《詠柳》描寫的是春天的景色，如「二月春風」。"
+    },
+    {
+      "id": "ch_p5_1_005",
+      "type": "truefalse",
+      "difficulty": "easy",
+      "question": "「碧玉」是指绿色的玉石，在詩中比喻柳葉的顏色。",
+      "answer": true,
+      "explanation": "「碧玉」比喻柳葉的青綠色，形容柳樹的美麗。"
+    },
+    {
+      "id": "ch_p5_1_006",
+      "type": "fillblank",
+      "difficulty": "medium",
+      "question": "「不知細葉誰裁出，二月春風___。」",
+      "answer": "似剪刀",
+      "explanation": "詩句「二月春風似剪刀」形象地描繪春風如剪刀般裁出細葉。"
+    },
+    {
+      "id": "ch_p5_1_007",
+      "type": "fillblank",
+      "difficulty": "easy",
+      "question": "《詠柳》的「詠」字意思是___。",
+      "answer": "歌唱、吟詠",
+      "explanation": "「詠」是指用詩歌來描寫和讚美事物。"
+    },
+    {
+      "id": "ch_p5_1_008",
+      "type": "shortanswer",
+      "difficulty": "hard",
+      "question": "詩歌中「碧玉妝成一樹高」用了什麼修辭？這樣描寫有什麼好處？",
+      "sampleAnswer": "用了比喻，把柳樹比作用碧玉打扮成的美女。這個比喻生動形象地描寫了柳樹的高大美麗，突出了春天生機勃勃的景象。",
+      "explanation": "這是比喻中的暗喻，把柳樹人格化，讚美柳樹的美麗。"
+    }
+  ]
+}

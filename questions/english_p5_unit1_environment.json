@@ -1,0 +1,83 @@
+{
+  "subject": "english",
+  "chapter": "p5_unit1_environment",
+  "title": "Unit 1: Our Environment",
+  "questions": [
+    {
+      "id": "en_p5_1_001",
+      "type": "mcq",
+      "difficulty": "easy",
+      "question": "What is the name of the school in the reading?",
+      "options": ["Green Primary School", "Blue School", "Happy School", "Clean School"],
+      "answer": "Green Primary School",
+      "explanation": "The school is called Green Primary School."
+    },
+    {
+      "id": "en_p5_1_002",
+      "type": "mcq",
+      "difficulty": "medium",
+      "question": "How many 'R's are mentioned in the reading?",
+      "options": ["Two", "Three", "Four", "Five"],
+      "answer": "Three",
+      "explanation": "Three 'R's are mentioned: Reduce, Reuse, Recycle."
+    },
+    {
+      "id": "en_p5_1_003",
+      "type": "mcq",
+      "difficulty": "easy",
+      "question": "What did the school win last month?",
+      "options": ["Sports Award", "Green School Award", "Music Award", "Art Award"],
+      "answer": "Green School Award",
+      "explanation": "The school won the 'Green School Award' last month."
+    },
+    {
+      "id": "en_p5_1_004",
+      "type": "mcq",
+      "difficulty": "medium",
+      "question": "What do students do with their paper?",
+      "options": ["Throw it away", "Use both sides", "Burn it", "Give it to teachers"],
+      "answer": "Use both sides",
+      "explanation": "Students use both sides of their paper to reduce waste."
+    },
+    {
+      "id": "en_p5_1_005",
+      "type": "truefalse",
+      "difficulty": "easy",
+      "question": "Students bring their own water bottles to school.",
+      "answer": true,
+      "explanation": "Yes, students bring their own water bottles as part of green practices."
+    },
+    {
+      "id": "en_p5_1_006",
+      "type": "truefalse",
+      "difficulty": "medium",
+      "question": "According to the principal, protecting the environment is only the school's responsibility.",
+      "answer": false,
+      "explanation": "The principal said protecting the environment is 'everyone's responsibility'."
+    },
+    {
+      "id": "en_p5_1_007",
+      "type": "fillblank",
+      "difficulty": "easy",
+      "question": "We should reduce, ___ and recycle to help the environment.",
+      "answer": "reuse",
+      "explanation": "The three R's are: Reduce, Reuse, Recycle."
+    },
+    {
+      "id": "en_p5_1_008",
+      "type": "fillblank",
+      "difficulty": "medium",
+      "question": "Students ___ their rubbish into different bins.",
+      "answer": "separate",
+      "explanation": "Students separate rubbish to make recycling easier."
+    },
+    {
+      "id": "en_p5_1_009",
+      "type": "shortanswer",
+      "difficulty": "hard",
+      "question": "Why did the school win the Green School Award? Give two reasons.",
+      "sampleAnswer": "1. Students use both sides of paper. 2. Students bring their own water bottles. 3. Students separate rubbish into different bins. 4. The school has a garden where they grow vegetables.",
+      "explanation": "The school has many green practices including reducing paper use, using reusable bottles, separating rubbish, and growing vegetables."
+    }
+  ]
+}

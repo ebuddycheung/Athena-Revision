@@ -1,4 +1,5 @@
 // Athena-Revision - 温習助手
+// 從題庫隨機讀取題目
 
 // State
 let currentSubject = null;
@@ -9,17 +10,17 @@ let currentQuestionIndex = 0;
 let userAnswers = {};
 
 // 科目與課文數據
-const sampleContent = {
+const subjects = {
     chinese: {
         name: "中文",
         chapters: [
-            { id: 1, title: "第一課：詠柳（古詩）", ready: true, file: "p5_unit1_poetry.md" },
+            { id: 1, title: "第一課：詠柳（古詩）", ready: true, file: "chinese_p5_unit1_poetry.json" },
         ]
     },
     english: {
         name: "英文",
         chapters: [
-            { id: 1, title: "Unit 1: Our Environment", ready: true, file: "p5_unit1_environment.md" },
+            { id: 1, title: "Unit 1: Our Environment", ready: true, file: "english_p5_unit1_environment.json" },
         ]
     },
     math: {
@@ -31,6 +32,9 @@ const sampleContent = {
     }
 };
 
+// 題庫URL前綴 (GitHub Raw)
+const QUESTION_BASE = "https://raw.githubusercontent.com/ebuddycheung/Athena-Revision/main/questions/";
+
 // Navigation
 function showSection(sectionId) {
     document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
@@ -41,7 +45,7 @@ function showSection(sectionId) {
 document.querySelectorAll('.subject-btn').forEach(btn => {
     btn.addEventListener('click', () => {
         currentSubject = btn.dataset.subject;
-        const subjectName = sampleContent[currentSubject].name;
+        const subjectName = subjects[currentSubject].name;
         document.getElementById('subject-title').textContent = 
             `📑 選擇 ${subjectName} 課文`;
         populateChapters();
@@ -52,9 +56,9 @@ document.querySelectorAll('.subject-btn').forEach(btn => {
 // Populate Chapters
 function populateChapters() {
     const list = document.getElementById('chapter-list');
-    const chapters = sampleContent[currentSubject]?.chapters || [];
+    const chapters = subjects[currentSubject]?.chapters || [];
     
-    if (chapters.length === 0) {
+    if (chapters.length === 0 || chapters.every(ch => !ch.ready)) {
         list.innerHTML = `
             <div class="empty-state">
                 <div class="icon">📚</div>
@@ -66,7 +70,7 @@ function populateChapters() {
     }
     
     list.innerHTML = chapters.map(ch => `
-        <button class="chapter-btn" data-chapter="${ch.id}">
+        <button class="chapter-btn" data-chapter="${ch.id}" ${!ch.ready ? 'disabled' : ''}>
             ${ch.title}
             <span class="status ${ch.ready ? 'ready' : ''}">
                 ${ch.ready ? '✓ 可用' : '⏳ 敬請期待'}
@@ -74,12 +78,10 @@ function populateChapters() {
         </button>
     `).join('');
     
-    list.querySelectorAll('.chapter-btn').forEach(btn => {
+    list.querySelectorAll('.chapter-btn:not([disabled])').forEach(btn => {
         btn.addEventListener('click', () => {
-            if (btn.querySelector('.status').classList.contains('ready')) {
-                currentChapter = btn.dataset.chapter;
-                showSection('quiz-section');
-            }
+            currentChapter = btn.dataset.chapter;
+            showSection('quiz-section');
         });
     });
 }
@@ -92,89 +94,59 @@ document.querySelectorAll('.quiz-btn').forEach(btn => {
     });
 });
 
-// Start Quiz
-function startQuiz() {
+// Start Quiz - 從題庫載入
+async function startQuiz() {
     showSection('quiz-taking-section');
     document.getElementById('question-container').innerHTML = 
-        '<div class="loading">正在生成題目...</div>';
+        '<div class="loading">正在載入題目...</div>';
     
-    setTimeout(() => {
-        generateSampleQuestions();
+    try {
+        await loadQuestionsFromBank();
         displayQuestion();
-    }, 1500);
+    } catch (error) {
+        document.getElementById('question-container').innerHTML = 
+            '<div class="empty-state"><p>載入題目失敗，請稍後再試。</p></div>';
+        console.error(error);
+    }
 }
 
-// Generate Sample Questions
-function generateSampleQuestions() {
-    if (currentSubject === 'chinese') {
-        currentQuestions = [
-            {
-                id: 1,
-                text: "《詠柳》的作者是誰？",
-                options: ["李白", "賀知章", "杜甫", "王維"],
-                answer: 1,
-                explanation: "《詠柳》的作者是唐代詩人賀知章。"
-            },
-            {
-                id: 2,
-                text: "「二月春風似剪刀」用了什麼修辭手法？",
-                options: ["比喻", "擬人", "排比", "對偶"],
-                answer: 0,
-                explanation: "這句詩把春風比作剪刀，是比喻修辭。"
-            },
-            {
-                id: 3,
-                text: "「萬條垂下綠絲絛」中的「絲絛」比喻的是什麼？",
-                options: ["柳葉", "柳枝", "絲帶", "春風"],
-                answer: 1,
-                explanation: "「絲絛」指用絲編成的帶子，比喻下垂的柳枝。"
-            }
-        ];
-    } else if (currentSubject === 'english') {
-        currentQuestions = [
-            {
-                id: 1,
-                text: "What is the name of the school in the reading?",
-                options: ["Green Primary School", "Blue School", "Happy School", "Clean School"],
-                answer: 0,
-                explanation: "The school is called Green Primary School."
-            },
-            {
-                id: 2,
-                text: "How many 'R's are mentioned in the reading?",
-                options: ["Two", "Three", "Four", "Five"],
-                answer: 1,
-                explanation: "Three 'R's are mentioned: Reduce, Reuse, Recycle."
-            },
-            {
-                id: 3,
-                text: "The school won the 'Green School Award'.",
-                options: ["True", "False"],
-                answer: 0,
-                explanation: "Yes, the school won the Green School Award last month."
-            }
-        ];
-    } else {
-        currentQuestions = [
-            {
-                id: 1,
-                text: "1/2 + 1/4 = ?",
-                options: ["2/6", "3/4", "1/6", "2/4"],
-                answer: 1,
-                explanation: "1/2 = 2/4, 2/4 + 1/4 = 3/4"
-            },
-            {
-                id: 2,
-                text: "以下哪個是分數？",
-                options: ["0.5", "1/3", "25%", "2"],
-                answer: 1,
-                explanation: "1/3 是分數格式。"
-            }
-        ];
+// 從題庫載入題目
+async function loadQuestionsFromBank() {
+    const chapter = subjects[currentSubject].chapters.find(ch => ch.id == currentChapter);
+    if (!chapter || !chapter.file) {
+        throw new Error("Chapter not found");
     }
+    
+    const url = QUESTION_BASE + chapter.file;
+    const response = await fetch(url);
+    const data = await response.json();
+    
+    // 根據題型篩選
+    let allQuestions = data.questions.filter(q => q.type === currentQuizType);
+    
+    // 如果該題型不夠，嘗試其他題型
+    if (allQuestions.length < 3) {
+        allQuestions = data.questions;
+    }
+    
+    // 隨機排序
+    allQuestions = shuffleArray(allQuestions);
+    
+    // 取最多10題
+    currentQuestions = allQuestions.slice(0, 10);
     
     currentQuestionIndex = 0;
     userAnswers = {};
+}
+
+// Fisher-Yates 洗牌算法
+function shuffleArray(array) {
+    const arr = [...array];
+    for (let i = arr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+    return arr;
 }
 
 // Display Question
@@ -185,30 +157,34 @@ function displayQuestion() {
     document.getElementById('progress').textContent = 
         `第 ${currentQuestionIndex + 1}/${currentQuestions.length} 題`;
     
-    let html = `<p class="question-text">${q.text}</p>`;
+    let html = `<p class="question-text">${q.question}</p>`;
     
-    if (q.options) {
+    if (q.type === 'mcq' || q.type === 'truefalse') {
         html += '<div class="options">';
         q.options.forEach((opt, i) => {
             html += `
-                <label class="option ${userAnswers[q.id] === i ? 'selected' : ''}">
-                    <input type="radio" name="answer" value="${i}" 
-                        ${userAnswers[q.id] === i ? 'checked' : ''}>
+                <label class="option" data-index="${i}">
+                    <input type="radio" name="answer" value="${i}">
                     ${opt}
                 </label>
             `;
         });
         html += '</div>';
-    } else {
+    } else if (q.type === 'fillblank') {
         html += `
             <input type="text" class="fill-input" 
-                value="${userAnswers[q.id] || ''}" 
                 placeholder="請輸入答案...">
+        `;
+    } else if (q.type === 'shortanswer') {
+        html += `
+            <textarea class="fill-input short-answer" 
+                placeholder="請輸入你的答案..."></textarea>
         `;
     }
     
     container.innerHTML = html;
     
+    // 更新導航按鈕
     document.getElementById('prev-btn').disabled = currentQuestionIndex === 0;
     
     if (currentQuestionIndex === currentQuestions.length - 1) {
@@ -219,16 +195,19 @@ function displayQuestion() {
         document.getElementById('submit-btn').style.display = 'none';
     }
     
+    // 事件監聽
     container.querySelectorAll('input[name="answer"]').forEach(input => {
         input.addEventListener('change', (e) => {
-            userAnswers[q.id] = parseInt(e.target.value);
-            displayQuestion();
+            const label = e.target.parentElement;
+            container.querySelectorAll('.option').forEach(l => l.classList.remove('selected'));
+            label.classList.add('selected');
+            userAnswers[q.id] = e.target.value;
         });
     });
     
-    const fillInput = container.querySelector('.fill-input');
-    if (fillInput) {
-        fillInput.addEventListener('input', (e) => {
+    const textInput = container.querySelector('.fill-input');
+    if (textInput) {
+        textInput.addEventListener('input', (e) => {
             userAnswers[q.id] = e.target.value;
         });
     }
@@ -252,28 +231,71 @@ document.getElementById('next-btn').addEventListener('click', () => {
 document.getElementById('submit-btn').addEventListener('click', submitQuiz);
 
 function submitQuiz() {
-    let score = 0;
-    currentQuestions.forEach(q => {
-        if (q.options) {
-            if (userAnswers[q.id] === q.answer) score++;
-        } else {
-            if (userAnswers[q.id]?.toLowerCase().trim() === q.answer.toLowerCase().trim()) {
-                score++;
-            }
+    let correct = 0;
+    let resultsHTML = '';
+    
+    currentQuestions.forEach((q, i) => {
+        let userAns = userAnswers[q.id];
+        let isCorrect = false;
+        
+        if (q.type === 'mcq' || q.type === 'truefalse') {
+            isCorrect = userAns == q.answer;
+            if (isCorrect) correct++;
+        } else if (q.type === 'fillblank') {
+            isCorrect = userAns?.toLowerCase().trim() === q.answer.toLowerCase().trim();
+            if (isCorrect) correct++;
+        } else if (q.type === 'shortanswer') {
+            // 短答題不計分，只顯示參考答案
+            isCorrect = null;
         }
+        
+        // 加入答題覆習
+        let statusIcon = '';
+        let statusClass = '';
+        if (isCorrect === true) {
+            statusIcon = '✅';
+            statusClass = 'correct';
+        } else if (isCorrect === false) {
+            statusIcon = '❌';
+            statusClass = 'incorrect';
+        } else {
+            statusIcon = '📝';
+            statusClass = 'review';
+        }
+        
+        resultsHTML += `
+            <div class="review-item ${statusClass}">
+                <div class="review-header">
+                    <span>${statusIcon} 第 ${i + 1} 題</span>
+                </div>
+                <p class="review-question">${q.question}</p>
+                ${q.type === 'mcq' || q.type === 'truefalse' ? `
+                    <p>你的答案：${q.options[userAns] || '未答'}</p>
+                    <p>正確答案：${q.answer}</p>
+                ` : `
+                    <p>你的答案：${userAns || '未答'}</p>
+                    ${q.type === 'fillblank' ? `<p>參考答案：${q.answer}</p>` : ''}
+                `}
+                <p class="explanation">💡 ${q.explanation}</p>
+                ${q.type === 'shortanswer' && q.sampleAnswer ? `
+                    <p class="sample-answer">📋 參考答案：${q.sampleAnswer}</p>
+                ` : ''}
+            </div>
+        `;
     });
     
-    document.getElementById('score').textContent = score;
+    document.getElementById('score').textContent = correct;
     document.getElementById('total').textContent = currentQuestions.length;
     
-    const percentage = (score / currentQuestions.length) * 100;
+    const percentage = (correct / currentQuestions.length) * 100;
     let message = '';
-    if (percentage >= 90) message = '🌟 太棒了！';
-    else if (percentage >= 70) message = '👍 做得好！';
-    else if (percentage >= 50) message = '📚 繼續加油！';
-    else message = '💪 多溫習，一定進步！';
+    if (percentage >= 90) message = '🌟 太棒了！完全掌握！';
+    else if (percentage >= 70) message = '👍 做得好！繼續加油！';
+    else if (percentage >= 50) message = '📚 還有進步空間，多溫習！';
+    else message = '💪 加油！温習後再試！';
     
     document.getElementById('score-message').textContent = message;
+    document.getElementById('review-section').innerHTML = resultsHTML;
     showSection('results-section');
 }
 
@@ -299,4 +321,6 @@ document.querySelector('.exit-btn')?.addEventListener('click', () => {
     showSection('subject-section');
 });
 
+// Initialize
 console.log('Athena 温習助手 loaded! 👺');
+console.log('題庫來源: ' + QUESTION_BASE);
