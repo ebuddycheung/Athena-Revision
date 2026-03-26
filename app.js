@@ -1,4 +1,4 @@
-// Athena-Revision - Frontend Logic
+// Athena-Revision - 温習助手
 
 // State
 let currentSubject = null;
@@ -8,46 +8,25 @@ let currentQuestions = [];
 let currentQuestionIndex = 0;
 let userAnswers = {};
 
-// Sample data for demonstration
+// 科目與課文數據
 const sampleContent = {
-    science: {
+    chinese: {
+        name: "中文",
         chapters: [
-            { id: 1, title: "Introduction to Biology", ready: false },
-            { id: 2, title: "Cell Structure", ready: false },
-            { id: 3, title: "Photosynthesis", ready: false },
-        ]
-    },
-    math: {
-        chapters: [
-            { id: 1, title: "Algebra Basics", ready: false },
-            { id: 2, title: "Geometry", ready: false },
+            { id: 1, title: "第一課：詠柳（古詩）", ready: true, file: "p5_unit1_poetry.md" },
         ]
     },
     english: {
+        name: "英文",
         chapters: [
-            { id: 1, title: "Our Environment (Unit 1)", ready: true, file: "p5_unit1_environment.md" },
-            { id: 2, title: "Grammar Fundamentals", ready: false },
+            { id: 1, title: "Unit 1: Our Environment", ready: true, file: "p5_unit1_environment.md" },
         ]
     },
-    chinese: {
+    math: {
+        name: "數學",
         chapters: [
-            { id: 1, title: "古詩朗讀《詠柳》", ready: true, file: "p5_unit1_poetry.md" },
-            { id: 2, title: "詞語學習", ready: false },
-        ]
-    },
-    history: {
-        chapters: [
-            { id: 1, title: "Ancient Civilizations", ready: false },
-        ]
-    },
-    geography: {
-        chapters: [
-            { id: 1, title: "World Regions", ready: false },
-        ]
-    },
-    other: {
-        chapters: [
-            { id: 1, title: "General Knowledge", ready: false },
+            { id: 1, title: "第一章：分數", ready: false },
+            { id: 2, title: "第二章：小數", ready: false },
         ]
     }
 };
@@ -62,8 +41,9 @@ function showSection(sectionId) {
 document.querySelectorAll('.subject-btn').forEach(btn => {
     btn.addEventListener('click', () => {
         currentSubject = btn.dataset.subject;
+        const subjectName = sampleContent[currentSubject].name;
         document.getElementById('subject-title').textContent = 
-            `📑 Select ${btn.textContent} Chapter`;
+            `📑 選擇 ${subjectName} 課文`;
         populateChapters();
         showSection('chapter-section');
     });
@@ -78,8 +58,8 @@ function populateChapters() {
         list.innerHTML = `
             <div class="empty-state">
                 <div class="icon">📚</div>
-                <p>No chapters available yet.</p>
-                <p>Ask Goblin to add content for this subject!</p>
+                <p>暫時沒有課文。</p>
+                <p>請聯絡 Goblin 加入新課文！</p>
             </div>
         `;
         return;
@@ -87,9 +67,9 @@ function populateChapters() {
     
     list.innerHTML = chapters.map(ch => `
         <button class="chapter-btn" data-chapter="${ch.id}">
-            Chapter ${ch.id}: ${ch.title}
+            ${ch.title}
             <span class="status ${ch.ready ? 'ready' : ''}">
-                ${ch.ready ? '✓ Ready' : '⏳ Coming soon'}
+                ${ch.ready ? '✓ 可用' : '⏳ 敬請期待'}
             </span>
         </button>
     `).join('');
@@ -114,43 +94,84 @@ document.querySelectorAll('.quiz-btn').forEach(btn => {
 
 // Start Quiz
 function startQuiz() {
-    // Show loading
     showSection('quiz-taking-section');
     document.getElementById('question-container').innerHTML = 
-        '<div class="loading">Generating questions</div>';
+        '<div class="loading">正在生成題目...</div>';
     
-    // Simulate loading (in real app, this would call the API)
     setTimeout(() => {
         generateSampleQuestions();
         displayQuestion();
     }, 1500);
 }
 
-// Generate Sample Questions (placeholder)
+// Generate Sample Questions
 function generateSampleQuestions() {
-    // This would be replaced by AI-generated questions from Goblin
-    currentQuestions = [
-        {
-            id: 1,
-            text: "What is the basic unit of life?",
-            options: ["Atom", "Cell", "Molecule", "Organ"],
-            answer: 1,
-            explanation: "The cell is the basic structural and functional unit of all living organisms."
-        },
-        {
-            id: 2,
-            text: "Cells with a nucleus are called prokaryotic cells.",
-            options: ["True", "False"],
-            answer: 1,
-            explanation: "Cells with a nucleus are called eukaryotic cells. Prokaryotic cells do not have a nucleus."
-        },
-        {
-            id: 3,
-            text: "Fill in the blank: The process by which plants make food is called _____.",
-            answer: "Photosynthesis",
-            explanation: "Photosynthesis is the process by which plants convert light energy into chemical energy."
-        }
-    ];
+    if (currentSubject === 'chinese') {
+        currentQuestions = [
+            {
+                id: 1,
+                text: "《詠柳》的作者是誰？",
+                options: ["李白", "賀知章", "杜甫", "王維"],
+                answer: 1,
+                explanation: "《詠柳》的作者是唐代詩人賀知章。"
+            },
+            {
+                id: 2,
+                text: "「二月春風似剪刀」用了什麼修辭手法？",
+                options: ["比喻", "擬人", "排比", "對偶"],
+                answer: 0,
+                explanation: "這句詩把春風比作剪刀，是比喻修辭。"
+            },
+            {
+                id: 3,
+                text: "「萬條垂下綠絲絛」中的「絲絛」比喻的是什麼？",
+                options: ["柳葉", "柳枝", "絲帶", "春風"],
+                answer: 1,
+                explanation: "「絲絛」指用絲編成的帶子，比喻下垂的柳枝。"
+            }
+        ];
+    } else if (currentSubject === 'english') {
+        currentQuestions = [
+            {
+                id: 1,
+                text: "What is the name of the school in the reading?",
+                options: ["Green Primary School", "Blue School", "Happy School", "Clean School"],
+                answer: 0,
+                explanation: "The school is called Green Primary School."
+            },
+            {
+                id: 2,
+                text: "How many 'R's are mentioned in the reading?",
+                options: ["Two", "Three", "Four", "Five"],
+                answer: 1,
+                explanation: "Three 'R's are mentioned: Reduce, Reuse, Recycle."
+            },
+            {
+                id: 3,
+                text: "The school won the 'Green School Award'.",
+                options: ["True", "False"],
+                answer: 0,
+                explanation: "Yes, the school won the Green School Award last month."
+            }
+        ];
+    } else {
+        currentQuestions = [
+            {
+                id: 1,
+                text: "1/2 + 1/4 = ?",
+                options: ["2/6", "3/4", "1/6", "2/4"],
+                answer: 1,
+                explanation: "1/2 = 2/4, 2/4 + 1/4 = 3/4"
+            },
+            {
+                id: 2,
+                text: "以下哪個是分數？",
+                options: ["0.5", "1/3", "25%", "2"],
+                answer: 1,
+                explanation: "1/3 是分數格式。"
+            }
+        ];
+    }
     
     currentQuestionIndex = 0;
     userAnswers = {};
@@ -162,7 +183,7 @@ function displayQuestion() {
     const container = document.getElementById('question-container');
     
     document.getElementById('progress').textContent = 
-        `Question ${currentQuestionIndex + 1}/${currentQuestions.length}`;
+        `第 ${currentQuestionIndex + 1}/${currentQuestions.length} 題`;
     
     let html = `<p class="question-text">${q.text}</p>`;
     
@@ -182,13 +203,12 @@ function displayQuestion() {
         html += `
             <input type="text" class="fill-input" 
                 value="${userAnswers[q.id] || ''}" 
-                placeholder="Type your answer...">
+                placeholder="請輸入答案...">
         `;
     }
     
     container.innerHTML = html;
     
-    // Update navigation buttons
     document.getElementById('prev-btn').disabled = currentQuestionIndex === 0;
     
     if (currentQuestionIndex === currentQuestions.length - 1) {
@@ -199,7 +219,6 @@ function displayQuestion() {
         document.getElementById('submit-btn').style.display = 'none';
     }
     
-    // Add event listeners
     container.querySelectorAll('input[name="answer"]').forEach(input => {
         input.addEventListener('change', (e) => {
             userAnswers[q.id] = parseInt(e.target.value);
@@ -233,7 +252,6 @@ document.getElementById('next-btn').addEventListener('click', () => {
 document.getElementById('submit-btn').addEventListener('click', submitQuiz);
 
 function submitQuiz() {
-    // Calculate score
     let score = 0;
     currentQuestions.forEach(q => {
         if (q.options) {
@@ -245,16 +263,15 @@ function submitQuiz() {
         }
     });
     
-    // Show results
     document.getElementById('score').textContent = score;
     document.getElementById('total').textContent = currentQuestions.length;
     
     const percentage = (score / currentQuestions.length) * 100;
     let message = '';
-    if (percentage >= 90) message = '🌟 Excellent!';
-    else if (percentage >= 70) message = '👍 Good job!';
-    else if (percentage >= 50) message = '📚 Keep practicing!';
-    else message = '💪 You can do better!';
+    if (percentage >= 90) message = '🌟 太棒了！';
+    else if (percentage >= 70) message = '👍 做得好！';
+    else if (percentage >= 50) message = '📚 繼續加油！';
+    else message = '💪 多溫習，一定進步！';
     
     document.getElementById('score-message').textContent = message;
     showSection('results-section');
@@ -278,6 +295,8 @@ document.querySelectorAll('.back-btn')[1]?.addEventListener('click', () => {
 document.querySelectorAll('.back-btn')[2]?.addEventListener('click', () => {
     showSection('quiz-section');
 });
+document.querySelector('.exit-btn')?.addEventListener('click', () => {
+    showSection('subject-section');
+});
 
-// Initialize
-console.log('Athena-Revision loaded! 👺');
+console.log('Athena 温習助手 loaded! 👺');
