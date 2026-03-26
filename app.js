@@ -12,7 +12,7 @@ let userAnswers = {};
 const sampleContent = {
     science: {
         chapters: [
-            { id: 1, title: "Introduction to Biology", ready: true },
+            { id: 1, title: "Introduction to Biology", ready: false },
             { id: 2, title: "Cell Structure", ready: false },
             { id: 3, title: "Photosynthesis", ready: false },
         ]
@@ -25,8 +25,14 @@ const sampleContent = {
     },
     english: {
         chapters: [
-            { id: 1, title: "Grammar Fundamentals", ready: false },
-            { id: 2, title: "Vocabulary Building", ready: false },
+            { id: 1, title: "Our Environment (Unit 1)", ready: true, file: "p5_unit1_environment.md" },
+            { id: 2, title: "Grammar Fundamentals", ready: false },
+        ]
+    },
+    chinese: {
+        chapters: [
+            { id: 1, title: "古詩朗讀《詠柳》", ready: true, file: "p5_unit1_poetry.md" },
+            { id: 2, title: "詞語學習", ready: false },
         ]
     },
     history: {
