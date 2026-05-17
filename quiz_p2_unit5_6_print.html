@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <title>小二數學測驗卷（除法・方向）</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 18mm 15mm;
+        }
+        
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: "Noto Sans CJK TC", "Microsoft JhengHei", "PingFang TC", sans-serif;
+            font-size: 14px;
+            line-height: 1.7;
+            color: #222;
+            max-width: 210mm;
+            margin: 0 auto;
+            padding: 15px;
+        }
+        
+        .page-header {
+            text-align: center;
+            border-bottom: 2px solid #222;
+            padding-bottom: 8px;
+            margin-bottom: 15px;
+        }
+        
+        .page-header h1 {
+            font-size: 20px;
+            margin: 0 0 4px 0;
+        }
+        
+        .page-header .subtitle {
+            font-size: 11px;
+            color: #666;
+        }
+        
+        .student-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px;
+            margin-bottom: 12px;
+            font-size: 13px;
+        }
+        
+        .info-item {
+            display: flex;
+            align-items: center;
+        }
+        
+        .info-item .label {
+            margin-right: 6px;
+        }
+        
+        .info-item .underline {
+            width: 100px;
+            border-bottom: 1px solid #222;
+            display: inline-block;
+        }
+        
+        .exam-info {
+            display: flex;
+            justify-content: space-between;
+            font-size: 11px;
+            color: #666;
+            margin-bottom: 12px;
+        }
+        
+        .section-title {
+            background: #eee;
+            padding: 6px 12px;
+            font-weight: bold;
+            font-size: 14px;
+            margin: 18px 0 12px 0;
+            border-left: 4px solid #222;
+        }
+        
+        .question {
+            margin-bottom: 22px;
+            page-break-inside: avoid;
+        }
+        
+        .question-number {
+            font-weight: bold;
+            font-size: 14px;
+            margin-bottom: 6px;
+        }
+        
+        .question-text {
+            margin-bottom: 8px;
+            padding-left: 4px;
+        }
+        
+        .mcq-options {
+            margin-left: 22px;
+        }
+        
+        .mcq-option {
+            margin-bottom: 5px;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .mcq-option .option-letter {
+            width: 18px;
+            flex-shrink: 0;
+            font-weight: bold;
+        }
+        
+        .tf-options {
+            margin-left: 22px;
+            display: flex;
+            gap: 28px;
+        }
+        
+        .page-break {
+            page-break-after: always;
+        }
+        
+        .notice {
+            background: #fff8e6;
+            border: 1px solid #d4a843;
+            padding: 8px 12px;
+            font-size: 11px;
+            margin-bottom: 15px;
+        }
+        
+        .notice-title {
+            font-weight: bold;
+            margin-bottom: 4px;
+        }
+        
+        .instruction {
+            font-size: 12px;
+            color: #555;
+            margin-bottom: 10px;
+            padding: 6px 10px;
+            background: #f5f5f5;
+            border-radius: 3px;
+        }
+        
+        .answer-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 12px;
+            margin-top: 10px;
+        }
+        
+        .answer-table th, .answer-table td {
+            border: 1px solid #bbb;
+            padding: 6px 8px;
+            text-align: center;
+        }
+        
+        .answer-table th {
+            background: #eee;
+        }
+        
+        @media print {
+            body {
+                padding: 0;
+            }
+            
+            .page-break {
+                page-break-after: always;
+            }
+            
+            .question {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- 第1頁 -->
+<div class="page-header">
+    <h1>📝 小二數學測驗卷</h1>
+    <div class="subtitle">單元五：基本除法　・　單元六：方向</div>
+</div>
+
+<div class="student-info">
+    <div class="info-item">
+        <span class="label">姓名：</span>
+        <span class="underline"></span>
+    </div>
+    <div class="info-item">
+        <span class="label">班別：</span>
+        <span class="underline"></span>
+    </div>
+    <div class="info-item">
+        <span class="label">學號：</span>
+        <span class="underline"></span>
+    </div>
+</div>
+
+<div class="exam-info">
+    <span>📅 日期：________________</span>
+    <span>⏱ 時間：________分鐘</span>
+    <span>📊 滿分：100分</span>
+</div>
+
+<div class="notice">
+    <div class="notice-title">📌 注意事項：</div>
+    請用鉛筆作答。選擇題請在正確答案的方格內填寫，填空題請直接在橫線上寫答案。
+</div>
+
+<div class="section-title">第一部份：選擇題（第1-8題，每題4分）</div>
+
+<div class="question">
+    <div class="question-number">1.</div>
+    <div class="question-text">把 12 個蘋果平均分給 3 個小朋友，每人可分到多少個？</div>
+    <div class="mcq-options">
+        <div class="mcq-option"><span class="option-letter">A.</span><span>2個</span></div>
+        <div class="mcq-option"><span class="option-letter">B.</span><span>3個</span></div>
+        <div class="mcq-option"><span class="option-letter">C.</span><span>4個</span></div>
+        <div class="mcq-option"><span class="option-letter">D.</span><span>6個</span></div>
+    </div>
+    <div style="margin-top:6px;">作答：□ A　□ B　□ C　□ D</div>
+</div>
+
+<div class="question">
+    <div class="question-number">2.</div>
+    <div class="question-text">有 15 粒糖，每 5 粒裝一包，可以裝多少包？</div>
+    <div class="mcq-options">
+        <div class="mcq-option"><span class="option-letter">A.</span><span>2包</span></div>
+        <div class="mcq-option"><span class="option-letter">B.</span><span>3包</span></div>
+        <div class="mcq-option"><span class="option-letter">C.</span><span>4包</span></div>
+        <div class="mcq-option"><span class="option-letter">D.</span><span>5包</span></div>
+    </div>
+    <div style="margin-top:6px;">作答：□ A　□ B　□ C　□ D</div>
+</div>
+
+<div class="question">
+    <div class="question-number">3.</div>
+    <div class="question-text">在除法算式 18 ÷ 3 = 6 中，哪個是除數？</div>
+    <div class="mcq-options">
+        <div class="mcq-option"><span class="option-letter">A.</span><span>18</span></div>
+        <div class="mcq-option"><span class="option-letter">B.</span><span>3</span></div>
+        <div class="mcq-option"><span class="option-letter">C.</span><span>6</span></div>
+        <div class="mcq-option"><span class="option-letter">D.</span><span>以上都不是</span></div>
+    </div>
+    <div style="margin-top:6px;">作答：□ A　□ B　□ C　□ D</div>
+</div>
+
+<div class="question">
+    <div class="question-number">4.</div>
+    <div class="question-text">根據 4 × 6 = 24，以下哪個除法算式是正確的？</div>
+    <div class="mcq-options">
+        <div class="mcq-option"><span class="option-letter">A.</span><span>24 ÷ 4 = 5</span></div>
+        <div class="mcq-option"><span class="option-letter">B.</span><span>24 ÷ 4 = 6</span></div>
+        <div class="mcq-option"><span class="option-letter">C.</span><span>24 ÷ 4 = 7</span></div>
+        <div class="mcq-option"><span class="option-letter">D.</span><span>24 ÷ 6 = 3</span></div>
+    </div>
+    <div style="margin-top:6px;">作答：□ A　□ B　□ C　□ D</div>
+</div>
+
+<div class="question">
+    <div class="question-number">5.</div>
+    <div class="question-text">17 ÷ 3 = 5 … 2，以下哪個說法是正確的？</div>
+    <div class="mcq-options">
+        <div class="mcq-option"><span class="option-letter">A.</span><span>商是 2，餘數是 5</span></div>
+        <div class="mcq-option"><span class="option-letter">B.</span><span>商是 5，餘數是 2</span></div>
+        <div class="mcq-option"><span class="option-letter">C.</span><span>商是 17，餘數是 3</span></div>
+        <div class="mcq-option"><span class="option-letter">D.</span><span>沒有餘數</span></div>
+    </div>
+    <div style="margin-top:6px;">作答：□ A　□ B　□ C　□ D</div>
+</div>
+
+<div class="question">
+    <div class="question-number">6.</div>
+    <div class="question-text">每盒有 6 個橙，買 4 盒，共有多少個橙？</div>
+    <div class="mcq-options">
+        <div class="mcq-option"><span class="option-letter">A.</span><span>10個</span></div>
+        <div class="mcq-option"><span class="option-letter">B.</span><span>12個</span></div>
+        <div class="mcq-option"><span class="option-letter">C.</span><span>24個</span></div>
+        <div class="mcq-option"><span class="option-letter">D.</span><span>20個</span></div>
+    </div>
+    <div style="margin-top:6px;">作答：□ A　□ B　□ C　□ D</div>
+</div>
+
+<div class="question">
+    <div class="question-number">7.</div>
+    <div class="question-text">24 個橙平均放在 4 盒，每盒有多少個橙？</div>
+    <div class="mcq-options">
+        <div class="mcq-option"><span class="option-letter">A.</span><span>4個</span></div>
+        <div class="mcq-option"><span class="option-letter">B.</span><span>6個</span></div>
+        <div class="mcq-option"><span class="option-letter">C.</span><span>8個</span></div>
+        <div class="mcq-option"><span class="option-letter">D.</span><span>12個</span></div>
+    </div>
+    <div style="margin-top:6px;">作答：□ A　□ B　□ C　□ D</div>
+</div>
+
+<div class="question">
+    <div class="question-number">8.</div>
+    <div class="question-text">學校有 48 個乒乓球，平均分給 8 個班，每班可得多少個？</div>
+    <div class="mcq-options">
+        <div class="mcq-option"><span class="option-letter">A.</span><span>5個</span></div>
+        <div class="mcq-option"><span class="option-letter">B.</span><span>6個</span></div>
+        <div class="mcq-option"><span class="option-letter">C.</span><span>7個</span></div>
+        <div class="mcq-option"><span class="option-letter">D.</span><span>8個</span></div>
+    </div>
+    <div style="margin-top:6px;">作答：□ A　□ B　□ C　□ D</div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- 第2頁 -->
+<div class="page-header">
+    <h1>📝 小二數學測驗卷（續）</h1>
+    <div class="subtitle">姓名：__________________　班別：_______　學號：_______</div>
+</div>
+
+<div class="section-title">第二部分：是非題（第9-16題，每題4分）</div>
+
+<div class="question">
+    <div class="question-number">9.</div>
+    <div class="question-text">除法和乘法是相反的運算。</div>
+    <div class="tf-options">
+        <span>□ 正確</span>
+        <span>□ 錯誤</span>
+    </div>
+</div>
+
+<div class="question">
+    <div class="question-number">10.</div>
+    <div class="question-text">在除法算式中，被除數一定比除數大。</div>
+    <div class="tf-options">
+        <span>□ 正確</span>
+        <span>□ 錯誤</span>
+    </div>
+</div>
+
+<div class="question">
+    <div class="question-number">11.</div>
+    <div class="question-text">把 16 個蘋果平均分給 4 個小朋友，每人可得 4 個。</div>
+    <div class="tf-options">
+        <span>□ 正確</span>
+        <span>□ 錯誤</span>
+    </div>
+</div>
+
+<div class="question">
+    <div class="question-number">12.</div>
+    <div class="question-text">可以利用乘法表來幫助計算除法答案。</div>
+    <div class="tf-options">
+        <span>□ 正確</span>
+        <span>□ 錯誤</span>
+    </div>
+</div>
+
+<div class="question">
+    <div class="question-number">13.</div>
+    <div class="question-text">四個主要方向是：東、南、西、北。</div>
+    <div class="tf-options">
+        <span>□ 正確</span>
+        <span>□ 錯誤</span>
+    </div>
+</div>
+
+<div class="question">
+    <div class="question-number">14.</div>
+    <div class="question-text">如果面向北方，哪個方向是你的右手邊？</div>
+    <div class="mcq-options">
+        <div class="mcq-option"><span class="option-letter">A.</span><span>東</span></div>
+        <div class="mcq-option"><span class="option-letter">B.</span><span>南</span></div>
+        <div class="mcq-option"><span class="option-letter">C.</span><span>西</span></div>
+        <div class="mcq-option"><span class="option-letter">D.</span><span>北</span></div>
+    </div>
+    <div style="margin-top:6px;">作答：□ A　□ B　□ C　□ D</div>
+</div>
+
+<div class="question">
+    <div class="question-number">15.</div>
+    <div class="question-text">如果學校在圖書館的北方，那麼圖書館在學校的哪個方向？</div>
+    <div class="mcq-options">
+        <div class="mcq-option"><span class="option-letter">A.</span><span>北方</span></div>
+        <div class="mcq-option"><span class="option-letter">B.</span><span>南方</span></div>
+        <div class="mcq-option"><span class="option-letter">C.</span><span>西方</span></div>
+        <div class="mcq-option"><span class="option-letter">D.</span><span>東方</span></div>
+    </div>
+    <div style="margin-top:6px;">作答：□ A　□ B　□ C　□ D</div>
+</div>
+
+<div class="question">
+    <div class="question-number">16.</div>
+    <div class="question-text">「西」的英文簡稱是 W。</div>
+    <div class="tf-options">
+        <span>□ 正確</span>
+        <span>□ 錯誤</span>
+    </div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- 第3頁 -->
+<div class="page-header">
+    <h1>📝 小二數學測驗卷（續）</h1>
+    <div class="subtitle">姓名：__________________　班別：_______　學號：_______</div>
+</div>
+
+<div class="section-title">第三部分：填空題（第17-25題，每題4分）</div>
+
+<div class="question">
+    <div class="question-number">17.</div>
+    <div class="question-text">24 ÷ 6 = ________</div>
+</div>
+
+<div class="question">
+    <div class="question-number">18.</div>
+    <div class="question-text">在算式 28 ÷ 4 = 7 中，被除數是 ________，除數是 ________，商是 ________。</div>
+</div>
+
+<div class="question">
+    <div class="question-number">19.</div>
+    <div class="question-text">每盤有 3 個蘋果，5 盤共有 ________ 個蘋果。</div>
+</div>
+
+<div class="question">
+    <div class="question-number">20.</div>
+    <div class="question-text">35 ÷ 5 = ________（因為 5 × ________ = 35）</div>
+</div>
+
+<div class="question">
+    <div class="question-number">21.</div>
+    <div class="question-text">把 20 個蘋果平均分給 5 個小朋友，每人可得 ________ 個。</div>
+</div>
+
+<div class="question">
+    <div class="question-number">22.</div>
+    <div class="question-text">四個主要方向是：________、________、________、________。</div>
+</div>
+
+<div class="question">
+    <div class="question-number">23.</div>
+    <div class="question-text">記憶口訣：面向北方，右手邊是 ________，左手邊是 ________，背後是 ________。</div>
+</div>
+
+<div class="question">
+    <div class="question-number">24.</div>
+    <div class="question-text">如果小明站在公園的北方，那麼公園在小明的 ________ 方。</div>
+</div>
+
+<div class="question">
+    <div class="question-number">25.</div>
+    <div class="question-text">指南針的針頭指向 ________ 方。</div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- 第4頁 -->
+<div class="page-header">
+    <h1>📝 小二數學測驗卷（續）</h1>
+    <div class="subtitle">姓名：__________________　班別：_______　學號：_______</div>
+</div>
+
+<div class="section-title">第四部分：應用題（第26-29題，每題6分）</div>
+
+<div class="question">
+    <div class="question-number">26.</div>
+    <div class="question-text">每盒有 6 個蛋糕，買了 4 盒，請回答以下問題：</div>
+    <div style="margin-left: 22px; margin-top:8px;">
+        <p style="margin: 6px 0;">(a) 一共有多少個蛋糕？</p>
+        <p style="margin: 4px 0 8px 28px;">算式：______________________　答案：________</p>
+        <p style="margin: 6px 0;">(b) 如果每人分 4 個，可以分給多少人？</p>
+        <p style="margin: 4px 0 8px 28px;">算式：______________________　答案：________</p>
+    </div>
+</div>
+
+<div class="question">
+    <div class="question-number">27.</div>
+    <div class="question-text">小明有 30 顆糖果，每 6 顆裝一袋，可以裝多少袋？</div>
+    <div style="margin-left: 22px; margin-top:8px;">
+        <p style="margin: 4px 0;">算式：______________________</p>
+        <p style="margin: 4px 0;">答：______________________</p>
+    </div>
+</div>
+
+<div class="question">
+    <div class="question-number">28.</div>
+    <div class="question-text">小花面向北方站立，請寫出她左手邊、右手邊和背後的方向。</div>
+    <div style="margin-left: 22px; margin-top:8px;">
+        <p style="margin: 6px 0;">左手邊：______________________</p>
+        <p style="margin: 6px 0;">右手邊：______________________</p>
+        <p style="margin: 6px 0;">背後：______________________</p>
+    </div>
+</div>
+
+<div class="question">
+    <div class="question-number">29.</div>
+    <div class="question-text">公園在圖書館的北方，醫院在圖書館的西方。請回答：</div>
+    <div style="margin-left: 22px; margin-top:8px;">
+        <p style="margin: 6px 0;">(a) 圖書館在公園的哪個方向？</p>
+        <p style="margin: 4px 0 8px 28px;">答：______________________</p>
+        <p style="margin: 6px 0;">(b) 圖書館在醫院的哪個方向？</p>
+        <p style="margin: 4px 0 8px 28px;">答：______________________</p>
+    </div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- 第5頁：答案紙 -->
+<div class="page-header">
+    <h1>📝 小二數學測驗卷（答案紙）</h1>
+    <div class="subtitle">姓名：__________________　班別：_______　學號：_______</div>
+</div>
+
+<table class="answer-table">
+    <tr>
+        <th>題號</th><th>作答</th><th>題號</th><th>作答</th><th>題號</th><th>作答</th>
+    </tr>
+    <tr><td>1</td><td></td><td>11</td><td></td><td>21</td><td></td></tr>
+    <tr style="background:#f9f9f9;"><td>2</td><td></td><td>12</td><td></td><td>22</td><td></td></tr>
+    <tr><td>3</td><td></td><td>13</td><td></td><td>23</td><td></td></tr>
+    <tr style="background:#f9f9f9;"><td>4</td><td></td><td>14</td><td></td><td>24</td><td></td></tr>
+    <tr><td>5</td><td></td><td>15</td><td></td><td>25</td><td></td></tr>
+    <tr style="background:#f9f9f9;"><td>6</td><td></td><td>16</td><td></td><td>26</td><td></td></tr>
+    <tr><td>7</td><td></td><td>17</td><td></td><td>27</td><td></td></tr>
+    <tr style="background:#f9f9f9;"><td>8</td><td></td><td>18</td><td></td><td>28</td><td></td></tr>
+    <tr><td>9</td><td></td><td>19</td><td></td><td>29</td><td></td></tr>
+    <tr style="background:#f9f9f9;"><td>10</td><td></td><td>20</td><td></td><td colspan="2"></td></tr>
+</table>
+
+<div style="margin-top:20px; font-size:12px; color:#666;">
+    <p style="margin-bottom:8px; font-weight:bold;">老師用欄</p>
+    <p>總分：________　核卷老師：________________</p>
+</div>
+
+</body>
+</html>
