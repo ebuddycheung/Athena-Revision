@@ -26,8 +26,8 @@ const subjects = {
     math: {
         name: "數學",
         chapters: [
-            { id: 1, title: "第一章：分數", ready: false },
-            { id: 2, title: "第二章：小數", ready: false },
+            { id: 5, title: "單元五：基本除法（第12–16課）", ready: true, file: "math_p2_unit5_division.json" },
+            { id: 6, title: "單元六：方向（第17–18課）", ready: true, file: "math_p2_unit6_directions.json" }
         ]
     }
 };

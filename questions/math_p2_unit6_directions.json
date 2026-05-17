@@ -1,0 +1,266 @@
+{
+  "subject": "math",
+  "chapter": "p2_unit6_directions",
+  "title": "單元六：方向（第17–18課）",
+  "topics": [
+    "方向（一）",
+    "方向（二）"
+  ],
+  "questions": [
+    {
+      "id": "math_p2_6_001",
+      "type": "mcq",
+      "difficulty": "easy",
+      "question": "四個主要方向是什麼？",
+      "options": ["東、南、西、北", "上、下、左、右", "前、後、左、右", "東、西、南、北"],
+      "answer": "東、南、西、北",
+      "explanation": "四個主要方向是：東（E）、南（S）、西（W）、北（N）。"
+    },
+    {
+      "id": "math_p2_6_002",
+      "type": "mcq",
+      "difficulty": "easy",
+      "question": "「東」的英文簡稱是什麼？",
+      "options": ["S", "E", "W", "N"],
+      "answer": "E",
+      "explanation": "東 = East = E，南 = South = S，西 = West = W，北 = North = N。"
+    },
+    {
+      "id": "math_p2_6_003",
+      "type": "mcq",
+      "difficulty": "easy",
+      "question": "「北」的英文簡稱是什麼？",
+      "options": ["S", "E", "W", "N"],
+      "answer": "N",
+      "explanation": "北 = North = N。"
+    },
+    {
+      "id": "math_p2_6_004",
+      "type": "mcq",
+      "difficulty": "easy",
+      "question": "如果面向北方，哪個方向是你的右手邊？",
+      "options": ["東", "南", "西", "北"],
+      "answer": "東",
+      "explanation": "記憶口訣：面向北方，右手邊是東，左手邊是西，背後是南。"
+    },
+    {
+      "id": "math_p2_6_005",
+      "type": "mcq",
+      "difficulty": "easy",
+      "question": "如果面向北方，哪個方向是你的左手邊？",
+      "options": ["東", "南", "西", "北"],
+      "answer": "西",
+      "explanation": "面向北方時，左手邊是西方。"
+    },
+    {
+      "id": "math_p2_6_006",
+      "type": "mcq",
+      "difficulty": "easy",
+      "question": "如果面向北方，背後是哪個方向？",
+      "options": ["東", "南", "西", "北"],
+      "answer": "南",
+      "explanation": "面向北方時，背後是南方。"
+    },
+    {
+      "id": "math_p2_6_007",
+      "type": "mcq",
+      "difficulty": "medium",
+      "question": "如果學校在圖書館的北方，那麼圖書館在學校的哪個方向？",
+      "options": ["北方", "南方", "西方", "東方"],
+      "answer": "南方",
+      "explanation": "如果 A 在 B 的北方，那麼 B 在 A 的南方。方向是相對的。"
+    },
+    {
+      "id": "math_p2_6_008",
+      "type": "mcq",
+      "difficulty": "medium",
+      "question": "如果操場在課室的西方，那麼課室在操場的哪個方向？",
+      "options": ["北方", "南方", "西方", "東方"],
+      "answer": "東方",
+      "explanation": "如果 A 在 B 的西方，那麼 B 在 A 的東方。"
+    },
+    {
+      "id": "math_p2_6_009",
+      "type": "mcq",
+      "difficulty": "easy",
+      "question": "指南針的針頭指向哪個方向？",
+      "options": ["東", "南", "西", "北"],
+      "answer": "北",
+      "explanation": "指南針的針頭（通常較尖的那端）指向北方，這是用來找出方向的工具。"
+    },
+    {
+      "id": "math_p2_6_010",
+      "type": "mcq",
+      "difficulty": "easy",
+      "question": "「南」的英文簡稱是什麼？",
+      "options": ["S", "E", "W", "N"],
+      "answer": "S",
+      "explanation": "南 = South = S。"
+    },
+    {
+      "id": "math_p2_6_011",
+      "type": "truefalse",
+      "difficulty": "easy",
+      "question": "東、南、西、北稱為四個主要方向。",
+      "answer": true,
+      "explanation": "東、南、西、北是四個主要方向，也稱為基本方向。"
+    },
+    {
+      "id": "math_p2_6_012",
+      "type": "truefalse",
+      "difficulty": "easy",
+      "question": "「西」的英文簡稱是 W。",
+      "answer": true,
+      "explanation": "西 = West = W。"
+    },
+    {
+      "id": "math_p2_6_013",
+      "type": "truefalse",
+      "difficulty": "medium",
+      "question": "如果 A 在 B 的東方，那麼 B 一定在 A 的西方。",
+      "answer": true,
+      "explanation": "方向是相對的。如果 A 在 B 的東方，B 就在 A 的西方。"
+    },
+    {
+      "id": "math_p2_6_014",
+      "type": "truefalse",
+      "difficulty": "easy",
+      "question": "指南針可以幫助我們在沒有參照物的情況下找出方向。",
+      "answer": true,
+      "explanation": "指南針的用途是在沒有參照物（如太陽、星星）時，找出方向。"
+    },
+    {
+      "id": "math_p2_6_015",
+      "type": "truefalse",
+      "difficulty": "medium",
+      "question": "如果面向南方，左手邊是西方。",
+      "answer": false,
+      "explanation": "面向南方時，左手邊是東方，右手邊是西方。面向不同方向時，左右的對應方向會改變。"
+    },
+    {
+      "id": "math_p2_6_016",
+      "type": "fillblank",
+      "difficulty": "easy",
+      "question": "四個主要方向是：___、___、___、___。",
+      "answer": "東|南|西|北",
+      "explanation": "四個主要方向是：東（E）、南（S）、西（W）、北（N）。"
+    },
+    {
+      "id": "math_p2_6_017",
+      "type": "fillblank",
+      "difficulty": "easy",
+      "question": "記憶口訣：面向北方，右手邊是___，左手邊是___，背後是___。",
+      "answer": "東|西|南",
+      "explanation": "面向北方時：右手邊是東，左手邊是西，背後是南。"
+    },
+    {
+      "id": "math_p2_6_018",
+      "type": "fillblank",
+      "difficulty": "medium",
+      "question": "如果小明站在公園的北方，那麼公園在小明的___方。",
+      "answer": "南",
+      "explanation": "如果 A 在 B 的北方，B 就在 A 的南方。"
+    },
+    {
+      "id": "math_p2_6_019",
+      "type": "fillblank",
+      "difficulty": "easy",
+      "question": "指南針的針頭指向___方。",
+      "answer": "北",
+      "explanation": "指南針的針頭指向北方，這是用來找出方向的重要工具。"
+    },
+    {
+      "id": "math_p2_6_020",
+      "type": "fillblank",
+      "difficulty": "medium",
+      "question": "如果車站在市場的西方，那麼市場在車站的___方。",
+      "answer": "東",
+      "explanation": "如果 A 在 B 的西方，B 就在 A 的東方。"
+    },
+    {
+      "id": "math_p2_6_021",
+      "type": "mcq",
+      "difficulty": "medium",
+      "question": "如果面向西方，你的右手邊是哪個方向？",
+      "options": ["北", "南", "東", "西"],
+      "answer": "北",
+      "explanation": "面向西方時：右手邊是北方（因為北在右邊），左手邊是南方，背後是東方。"
+    },
+    {
+      "id": "math_p2_6_022",
+      "type": "mcq",
+      "difficulty": "medium",
+      "question": "如果商場在火車站的南方，以下哪個描述是正確的？",
+      "options": ["商場在火車站的上面", "火車站在商場的北方", "商場在火車站的裡面", "火車站在商場的西方"],
+      "answer": "火車站在商場的北方",
+      "explanation": "如果 A 在 B 的南方，那麼 B 在 A 的北方。例如：商場在火車站的南方，火車站就在商場的北方。"
+    },
+    {
+      "id": "math_p2_6_023",
+      "type": "mcq",
+      "difficulty": "easy",
+      "question": "哪個字母代表西方？",
+      "options": ["E", "S", "W", "N"],
+      "answer": "W",
+      "explanation": "西方 West = W。"
+    },
+    {
+      "id": "math_p2_6_024",
+      "type": "truefalse",
+      "difficulty": "medium",
+      "question": "用指南針時，如果針頭指向北方，表示我們面向北方。",
+      "answer": false,
+      "explanation": "指南針的針頭指向北方。如果我們拿著指南針，針頭指向哪個方向，那個方向就是北方，與我們面向哪個方向無關。"
+    },
+    {
+      "id": "math_p2_6_025",
+      "type": "fillblank",
+      "difficulty": "medium",
+      "question": "如果醫院在郵局的東方，郵局在醫院的___方。",
+      "answer": "西",
+      "explanation": "如果 A 在 B 的東方，B 就在 A 的西方。"
+    },
+    {
+      "id": "math_p2_6_026",
+      "type": "shortanswer",
+      "difficulty": "hard",
+      "question": "小明面向北方站立，請說出他左手邊、右手邊和背後的方向。",
+      "sampleAnswer": "小明面向北方時：左手邊是西方，右手邊是東方，背後是南方。",
+      "explanation": "記憶口訣：面向北方，右手邊是東，左手邊是西，背後是南。"
+    },
+    {
+      "id": "math_p2_6_027",
+      "type": "shortanswer",
+      "difficulty": "hard",
+      "question": "公園在圖書館的北方，醫院在圖書館的西方。請說出：(1) 圖書館在公園的哪個方向？ (2) 圖書館在醫院的哪個方向？",
+      "sampleAnswer": "(1) 圖書館在公園的南方。(2) 圖書館在醫院的東方。因為方向是相對的：如果 A 在 B 的北方，B 就在 A 的南方；如果 A 在 B 的西方，B 就在 A 的東方。",
+      "explanation": "方向是相對的。如果公園在圖書館的北方，則圖書館在公園的南方。如果醫院在圖書館的西方，則圖書館在醫院的東方。"
+    },
+    {
+      "id": "math_p2_6_028",
+      "type": "mcq",
+      "difficulty": "medium",
+      "question": "面向南方時，哪個方向是右手邊？",
+      "options": ["東", "南", "西", "北"],
+      "answer": "西",
+      "explanation": "面向南方時，右手邊是西方，左手邊是東方。"
+    },
+    {
+      "id": "math_p2_6_029",
+      "type": "mcq",
+      "difficulty": "medium",
+      "question": "如果郵局在醫院的北方，以下哪個描述是正確的？",
+      "options": ["醫院在郵局的北方", "醫院在郵局的南方", "郵局在醫院的南方", "醫院在郵局的西方"],
+      "answer": "醫院在郵局的南方",
+      "explanation": "如果 A 在 B 的北方，B 就在 A 的南方。所以郵局在醫院的北方，醫院就在郵局的南方。"
+    },
+    {
+      "id": "math_p2_6_030",
+      "type": "truefalse",
+      "difficulty": "medium",
+      "question": "我們可以用「甲在乙的東/南/西/北方」來描述物件的相對位置。",
+      "answer": true,
+      "explanation": "這是描述相對位置的方法。例如：學校在圖書館的北方，操場在課室的西方。"
+    }
+  ]
+}

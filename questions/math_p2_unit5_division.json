@@ -1,0 +1,268 @@
+{
+  "subject": "math",
+  "chapter": "p2_unit5_division",
+  "title": "單元五：基本除法（第12–16課）",
+  "topics": [
+    "分物（均分）",
+    "分物（包含）",
+    "乘和除的關係",
+    "除法",
+    "乘除應用題"
+  ],
+  "questions": [
+    {
+      "id": "math_p2_5_001",
+      "type": "mcq",
+      "difficulty": "easy",
+      "question": "把 12 個蘋果平均分給 3 個小朋友，每人可分到多少個？",
+      "options": ["2個", "3個", "4個", "6個"],
+      "answer": "4個",
+      "explanation": "這是「均分」的情況。12 ÷ 3 = 4，所以每人分到 4 個。"
+    },
+    {
+      "id": "math_p2_5_002",
+      "type": "mcq",
+      "difficulty": "easy",
+      "question": "有 15 粒糖，每 5 粒裝一包，可以裝多少包？",
+      "options": ["2包", "3包", "4包", "5包"],
+      "answer": "3包",
+      "explanation": "這是「包含」的情況。15 ÷ 5 = 3，所以可以裝 3 包。"
+    },
+    {
+      "id": "math_p2_5_003",
+      "type": "mcq",
+      "difficulty": "medium",
+      "question": "在除法算式 18 ÷ 3 = 6 中，哪個是除數？",
+      "options": ["18", "3", "6", "以上都不是"],
+      "answer": "3",
+      "explanation": "除法算式中：被除數 ÷ 除數 = 商。18 是被除數，3 是除數，6 是商。"
+    },
+    {
+      "id": "math_p2_5_004",
+      "type": "mcq",
+      "difficulty": "easy",
+      "question": "以下哪個算式是正確的？",
+      "options": ["4 × 5 = 18", "4 × 5 = 19", "4 × 5 = 20", "4 × 5 = 22"],
+      "answer": "4 × 5 = 20",
+      "explanation": "4 × 5 = 20，是基本的乘法運算。"
+    },
+    {
+      "id": "math_p2_5_005",
+      "type": "mcq",
+      "difficulty": "medium",
+      "question": "根據 4 × 6 = 24，以下哪個除法算式是正確的？",
+      "options": ["24 ÷ 4 = 5", "24 ÷ 4 = 6", "24 ÷ 4 = 7", "24 ÷ 6 = 3"],
+      "answer": "24 ÷ 4 = 6",
+      "explanation": "乘法和除法互為相反運算。4 × 6 = 24，所以 24 ÷ 4 = 6，24 ÷ 6 = 4。"
+    },
+    {
+      "id": "math_p2_5_006",
+      "type": "mcq",
+      "difficulty": "medium",
+      "question": "17 ÷ 3 = 5 … 2，以下哪個說法是正確的？",
+      "options": ["商是 2，餘數是 5", "商是 5，餘數是 2", "商是 17，餘數是 3", "沒有餘數"],
+      "answer": "商是 5，餘數是 2",
+      "explanation": "17 ÷ 3 = 5 … 2，表示 17 除以 3，商是 5，餘數是 2。"
+    },
+    {
+      "id": "math_p2_5_007",
+      "type": "mcq",
+      "difficulty": "easy",
+      "question": "每盒有 6 個橙，買 4 盒，共有多少個橙？",
+      "options": ["10個", "12個", "24個", "20個"],
+      "answer": "24個",
+      "explanation": "這是乘法應用題。6 × 4 = 24，共有 24 個橙。"
+    },
+    {
+      "id": "math_p2_5_008",
+      "type": "mcq",
+      "difficulty": "medium",
+      "question": "24 個橙平均放在 4 盒，每盒有多少個橙？",
+      "options": ["4個", "6個", "8個", "12個"],
+      "answer": "6個",
+      "explanation": "這是除法應用題（均分）。24 ÷ 4 = 6，每盒有 6 個橙。"
+    },
+    {
+      "id": "math_p2_5_009",
+      "type": "mcq",
+      "difficulty": "medium",
+      "question": "20 ÷ 4 = ?",
+      "options": ["4", "5", "6", "7"],
+      "answer": "5",
+      "explanation": "利用乘法表：4 × 5 = 20，所以 20 ÷ 4 = 5。"
+    },
+    {
+      "id": "math_p2_5_010",
+      "type": "mcq",
+      "difficulty": "easy",
+      "question": "「均分」的意思是什麼？",
+      "options": ["每次取相同數量", "把物件平均分給若干人", "把物件分完", "每次取不同的數量"],
+      "answer": "把物件平均分給若干人",
+      "explanation": "「均分」是把物件平均分給若干人，求每人得多少。"
+    },
+    {
+      "id": "math_p2_5_011",
+      "type": "truefalse",
+      "difficulty": "easy",
+      "question": "除法和乘法是相反的運算。",
+      "answer": true,
+      "explanation": "乘法和除法互為相反運算。例如：3 × 4 = 12，所以 12 ÷ 3 = 4，12 ÷ 4 = 3。"
+    },
+    {
+      "id": "math_p2_5_012",
+      "type": "truefalse",
+      "difficulty": "medium",
+      "question": "在除法算式中，被除數一定比除數大。",
+      "answer": false,
+      "explanation": "被除數可以比除數小，例如 5 ÷ 10 = 0 … 5，這樣商是 0，餘數是 5。"
+    },
+    {
+      "id": "math_p2_5_013",
+      "type": "truefalse",
+      "difficulty": "easy",
+      "question": "把 16 個蘋果平均分給 4 個小朋友，每人可得 4 個。",
+      "answer": true,
+      "explanation": "16 ÷ 4 = 4，所以每人可得 4 個。這是均分的情況。"
+    },
+    {
+      "id": "math_p2_5_014",
+      "type": "truefalse",
+      "difficulty": "medium",
+      "question": "可以利用乘法表來幫助計算除法答案。",
+      "answer": true,
+      "explanation": "例如要知道 35 ÷ 5 = ?，可以想 5 × ? = 35，因為 5 × 7 = 35，所以 35 ÷ 5 = 7。"
+    },
+    {
+      "id": "math_p2_5_015",
+      "type": "truefalse",
+      "difficulty": "easy",
+      "question": "「包含」是每次取相同數量，求可以取多少次。",
+      "answer": true,
+      "explanation": "「包含」是把一堆物件每次取若干個，求可以取多少次。例如：有 12 粒糖，每 4 粒裝一包，可以裝多少包？"
+    },
+    {
+      "id": "math_p2_5_016",
+      "type": "fillblank",
+      "difficulty": "easy",
+      "question": "24 ÷ 6 = ___",
+      "answer": "4",
+      "explanation": "利用乘法表：6 × 4 = 24，所以 24 ÷ 6 = 4。"
+    },
+    {
+      "id": "math_p2_5_017",
+      "type": "fillblank",
+      "difficulty": "medium",
+      "question": "在算式 28 ÷ 4 = 7 中，被除數是___，除數是___，商是___。",
+      "answer": "28|4|7",
+      "explanation": "除法算式中：被除數 ÷ 除數 = 商。所以被除數是 28，除數是 4，商是 7。"
+    },
+    {
+      "id": "math_p2_5_018",
+      "type": "fillblank",
+      "difficulty": "easy",
+      "question": "每盤有 3 個蘋果，5 盤共有___個蘋果。",
+      "answer": "15",
+      "explanation": "這是乘法：3 × 5 = 15，所以 5 盤共有 15 個蘋果。"
+    },
+    {
+      "id": "math_p2_5_019",
+      "type": "fillblank",
+      "difficulty": "medium",
+      "question": "35 ÷ 5 = ___（因為 5 × ___ = 35）",
+      "answer": "7|7",
+      "explanation": "利用乘法表：5 × 7 = 35，所以 35 ÷ 5 = 7。"
+    },
+    {
+      "id": "math_p2_5_020",
+      "type": "fillblank",
+      "difficulty": "easy",
+      "question": "把 20 個蘋果平均分給 5 個小朋友，每人可得___個。",
+      "answer": "4",
+      "explanation": "這是均分：20 ÷ 5 = 4，所以每人可得 4 個。"
+    },
+    {
+      "id": "math_p2_5_021",
+      "type": "shortanswer",
+      "difficulty": "hard",
+      "question": "小明有 30 顆糖果，每 6 顆裝一袋，可以裝多少袋？這是「均分」還是「包含」？",
+      "sampleAnswer": "30 ÷ 6 = 5，所以可以裝 5 袋。這是「包含」的情况，因為每次取 6 顆，求可以取多少次。",
+      "explanation": "30 ÷ 6 = 5，可以裝 5 袋。這屬於「包含」的情況：把一堆物件每次取若干個，求可以取多少次。"
+    },
+    {
+      "id": "math_p2_5_022",
+      "type": "shortanswer",
+      "difficulty": "hard",
+      "question": "小華有 42 元，想買每本 7 元的練習簿，最多可以買多少本？請寫出算式並說明。",
+      "sampleAnswer": "42 ÷ 7 = 6，所以最多可以買 6 本練習簿。因為 7 × 6 = 42，7 × 7 = 49 超過了 42 元。",
+      "explanation": "這是除法應用題：42 ÷ 7 = 6，利用乘法表試商，7 × 6 = 42，所以可以買 6 本。"
+    },
+    {
+      "id": "math_p2_5_023",
+      "type": "mcq",
+      "difficulty": "hard",
+      "question": "以下哪個算式可以用來驗算 48 ÷ 6 = 8？",
+      "options": ["6 × 8 = 48", "8 × 8 = 64", "48 × 6 = 288", "48 ÷ 8 = 6"],
+      "answer": "6 × 8 = 48",
+      "explanation": "除法可以用乘法驗算：48 ÷ 6 = 8，所以 6 × 8 = 48。也可以用 48 ÷ 8 = 6 驗算。"
+    },
+    {
+      "id": "math_p2_5_024",
+      "type": "mcq",
+      "difficulty": "medium",
+      "question": "學校有 48 個乒乓球，平均分給 8 個班，每班可得多少個？",
+      "options": ["5個", "6個", "7個", "8個"],
+      "answer": "6個",
+      "explanation": "48 ÷ 8 = 6（因為 8 × 6 = 48），所以每班可得 6 個乒乓球。"
+    },
+    {
+      "id": "math_p2_5_025",
+      "type": "fillblank",
+      "difficulty": "medium",
+      "question": "14 ÷ 3 = ___ …… ___（商和餘數）",
+      "answer": "4|2",
+      "explanation": "14 ÷ 3 = 4 … 2，因為 3 × 4 = 12，14 - 12 = 2（餘數）。"
+    },
+    {
+      "id": "math_p2_5_026",
+      "type": "truefalse",
+      "difficulty": "medium",
+      "question": "「每盒 4 個，24 個可以裝幾盒？」這個問題是「均分」的問題。",
+      "answer": false,
+      "explanation": "「每盒 4 個，24 個可以裝幾盒？」是「包含」的情況，因為每次取 4 個，求可以取多少次。"
+    },
+    {
+      "id": "math_p2_5_027",
+      "type": "mcq",
+      "difficulty": "easy",
+      "question": "7 × 8 = ?",
+      "options": ["54", "56", "58", "64"],
+      "answer": "56",
+      "explanation": "7 × 8 = 56，這是基本的乘法運算。"
+    },
+    {
+      "id": "math_p2_5_028",
+      "type": "mcq",
+      "difficulty": "medium",
+      "question": "56 ÷ 7 = ?",
+      "options": ["6", "7", "8", "9"],
+      "answer": "8",
+      "explanation": "因為 7 × 8 = 56，所以 56 ÷ 7 = 8。"
+    },
+    {
+      "id": "math_p2_5_029",
+      "type": "fillblank",
+      "difficulty": "hard",
+      "question": "一箱有 9 個橙，81 個橙可以裝___箱。",
+      "answer": "9",
+      "explanation": "81 ÷ 9 = 9（因為 9 × 9 = 81），所以可以裝 9 箱。"
+    },
+    {
+      "id": "math_p2_5_030",
+      "type": "shortanswer",
+      "difficulty": "hard",
+      "question": "比較「均分」和「包含」兩種除法情況，並各舉一個例子說明。",
+      "sampleAnswer": "均分：把物件平均分給若干人，求每人得多少。例如：把 15 個蘋果平均分給 5 個小朋友，每人得 3 個（15 ÷ 5 = 3）。包含：把一堆物件每次取若干個，求可以取多少次。例如：有 20 粒糖，每 5 粒裝一包，可以裝 4 包（20 ÷ 5 = 4）。",
+      "explanation": "均分和包含是除法的兩種基本情況：均分側重『每人得多少』，包含側重『可以分多少次』。"
+    }
+  ]
+}
